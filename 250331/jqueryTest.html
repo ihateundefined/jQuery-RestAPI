@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <!-- Jquery를 항상 최신버전으로 사용하는 CDN -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            // 같은 것을 js와 jquery로 출력하기
+            // var ele = document.getElementById('msgid')
+            $('#msgid').html("This is 'Hello world' by Jquery.").css('background-color', 'pink');
+        })
+    </script>
+    This is 'Hello world' by HTML.
+    <div id="msgid"></div>
+</body>
+</html>
