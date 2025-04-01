@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chainJS</title>
+    <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+</head>
+<body>
+    <a href="https://jquery.com/" id="tutorial" target="_self">jQuery</a>
+
+    <!-- jQuery로 작성된 것을 js로 바꾸기 -->
+    <script>
+        // chain을 쓰면 코드가 간결하고, 쉽게 사용 가능
+        // $('#tutorial').attr('href','http://jquery.org').attr('target','_blank').css('color','pink');
+        var tutorial = document.getElementById('tutorial');
+        tutorial.setAttribute('href', 'http://jquery.org');
+        tutorial.setAttribute('target', '_blank');
+        tutorial.style.color = 'skyblue';
+    </script>
+</body>
+</html>

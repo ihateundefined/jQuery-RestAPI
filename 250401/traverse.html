@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traverse</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <ul class="first">
+        <li class="foo">list item1</li>
+        <li>list item2</li>
+        <li class="bar">list item3</li>
+    </ul>
+    <ul class="second">
+        <li class="foo">list item1</li>
+        <li>list item2</li>
+        <li class="bar">list item3</li>
+    </ul>
+    <script>
+        // end() -> 주어를 바꾼다 .. 대상을 바꾸는 것
+        $('ul.first').find('.foo').css('background-color','gold').end().find('.bar').css('background-color','cyan');
+    </script>
+</body>
+</html>

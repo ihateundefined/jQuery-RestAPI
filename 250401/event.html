@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <input type="button" id="click_me" value="click_me" >
+    <input type="button" id="remove_event" value="unbind" >
+    <input type="button" id="trigger_event" value="trigger" >
+
+    <script>
+        function clickHandler(e) {
+            alert('Hi there');
+        }
+        // jQuery에서는 event 등록을 bind 쓴다
+        $('#click_me').bind('click',clickHandler);
+        // event 해제를 unbind 쓴다
+        $('#remove_event').bind('click', function(e) {
+            $('#click_me').unbind('click',clickHandler);
+        });
+        $('#trigger_event').bind('click', function(e){
+            $('#click_me').trigger('click');
+        });
+    </script>
+</body>
+</html>
