@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        div {
+            margin: 10px;
+            width: 80px;
+            height: 80px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="fadeout" value="fade out">
+    <input type="button" id="fadein" value="fade in">
+    <input type="button" id="hide" value="hide">
+    <input type="button" id="show" value="show">
+    <input type="button" id="slidedown" value="slide down">
+    <input type="button" id="slideup" value="slide up">
+    <input type="button" id="mix" value="mix">
+    <div id="target">
+        Target
+    </div>
+    <script>
+        // jQuery의 $
+        $('input[type="button"]').click(function(e){
+            // c의 this가 e.target임
+            // jQuery 처럼 보이게 하려고 $this 한 것임
+            var $this = $(e.target);
+
+            // if else 구문은 너무 기니까 switch로
+            // if($this.attr('id') == 'fadeout') {
+            //     $('#target').fadeOut(3000);
+            // }
+
+            switch($this.attr('id')) {
+                case 'fadeout':
+                    $('#target').fadeOut(3000);
+                    break;
+                case 'fadein':
+                    $('#target').fadeIn(2000);
+                    break;
+                case 'hide':
+                    $('#target').hide();
+                    break;
+                case 'show':
+                    $('#target').show();
+                    break;
+                case 'slidedown':
+                    $('#target').slideDown(3000);
+                    break;
+                case 'slideup':
+                    $('#target').slideUp(3000);
+                    break;
+                case 'mix':
+                    $('#target').fadeOut(3000).fadeIn(3000).delay(1000);
+                    break;
+            };
+        });
+    </script>
+</body>
+</html>

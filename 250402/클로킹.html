@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로킹 레이스</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <button id="clocking">클로킹..?</button>
+    <img src="./wow.png" alt="레이스" id="wow">
+
+    <script>
+        $('#clocking').click(function(){
+            $('#wow').toggle().fadeOut(5000);
+        });
+    </script>
+</body>
+</html>
