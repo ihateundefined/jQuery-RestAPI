@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 연습하기</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <h1>API 연습</h1>
+    <input id="search" type="text">
+    <button id="submit">검색하기</button>
+    <p></p>
+
+    <script>
+        $('#submit').click(function(){
+            // $.ajax(요청정보).done(응답 완료 시 실행할 함수)
+            $.ajax({
+                method:'GET',
+                // 정적 검색
+                // url:'https://dapi.kakao.com/v3/search/book?target=title&query=나혼자파이썬',
+                
+                // 동적 검색
+                url: 'https://dapi.kakao.com/v2/search/image?target=title&query=' + $('#search').val(),
+                headers:{Authorization: "KakaoAK 04704bbe161e23b338b7b1ad57955a85"}
+            }).done(function(data){
+                // console.log(data.documents[0].title);
+                // console.log(data.documents[0].thumbnail);
+                // $('body').append('<span>'+ data.documents[0].title + '</span>').append('<img src=' + data.documents[0].thumbnail + ' />').append('<br>');
+                $('body').append('<img src=' + data.documents[0].image_url + '>').append('<br>');
+            }).fail(function(error){
+                console.log(error);
+            })
+        })
+    </script>
+</body>
+</html>
