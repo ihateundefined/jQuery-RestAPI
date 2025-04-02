@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            // image binary 파일
+            // url : 'https://jamsuham75.github.io/image/wraith.png',
+            
+            // json 파일
+            url : 'https://raw.githubusercontent.com/jamsuham75/image/main/test.json',
+            method : 'GET',
+            success : function(response) {
+                console.log('성공! >> ', response);
+            },
+            error : function(error) {
+                console.log("에러 발생! >> ", error);
+            }
+        })
+    </script>
+</body>
+</html>
